@@ -18,8 +18,6 @@ import java.util.Properties;
 @ComponentScan(basePackages = "com.rest")
 @EnableWebMvc
 @EnableTransactionManagement
-
-
 public class MyConfig {
 
 
@@ -44,7 +42,7 @@ public class MyConfig {
         sessionFactoryBean.setDataSource(dataSource());
         sessionFactoryBean.setPackagesToScan("com.rest.entity");
         Properties property = new Properties();
-        property.setProperty("hibernate.dialect", "rg.hibernate.dialect.PostgreSQL10Dialect");
+        property.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL10Dialect");
         property.setProperty("hibernate.show_sql", "true");
         sessionFactoryBean.setHibernateProperties(property);
         return sessionFactoryBean;
